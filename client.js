@@ -13,6 +13,10 @@ const connect = function() {
   conn.on("connect", () => {
     console.log("Connection established ");
     conn.write("Name: PAT");
+    /*setInterval(() => {
+      conn.write("Move: up");
+    }, 500);
+    */
   });
   
   conn.on("data", (data) => {
