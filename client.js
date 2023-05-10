@@ -10,6 +10,11 @@ const connect = function() {
   // interpret incoming data as text
   conn.setEncoding("utf8");
   //Note the syntax here data is passed into the callback and populated by the server
+  conn.on("connect", () => {
+    console.log("Connection established ");
+    conn.write("Name: PAT");
+  });
+  
   conn.on("data", (data) => {
     console.log(data);
   });
