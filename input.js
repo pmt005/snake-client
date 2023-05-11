@@ -1,5 +1,6 @@
 // Stores the active TCP connection object.
 let connection;
+const { snekUP, snekRIGHT, snekLEFT, snekDOWN } = require("./constants");
 
 // setup interface to handle user input from stdin
 
@@ -25,16 +26,16 @@ const handleUserInput = function(key) {
     process.exit();
     break;
   case "w":
-    connection.write("Move: up");
+    connection.write(snekUP);
     break;
   case "a":
-    connection.write("Move: left");
+    connection.write(snekLEFT);
     break;
   case "d":
-    connection.write("Move: right");
+    connection.write(snekRIGHT);
     break;
   case "s":
-    connection.write("Move: down");
+    connection.write(snekDOWN);
     break;
   case "b":
     connection.write("Say: BUMBLEBEETUNA!");
